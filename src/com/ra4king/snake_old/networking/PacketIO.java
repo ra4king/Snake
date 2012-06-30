@@ -1,4 +1,4 @@
-package com.ra4king.snake.networking;
+package com.ra4king.snake_old.networking;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

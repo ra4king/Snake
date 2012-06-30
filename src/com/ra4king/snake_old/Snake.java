@@ -1,4 +1,4 @@
-package com.ra4king.snake;
+package com.ra4king.snake_old;
 
 import java.awt.Color;
 import java.awt.Font;

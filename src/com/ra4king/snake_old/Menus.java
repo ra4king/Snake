@@ -1,4 +1,4 @@
-package com.ra4king.snake;
+package com.ra4king.snake_old;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -13,9 +13,9 @@ import java.util.Arrays;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
-import com.ra4king.snake.networking.Packet;
-import com.ra4king.snake.networking.PacketIO;
-import com.ra4king.snake.networking.SocketPacketIO;
+import com.ra4king.snake_old.networking.Packet;
+import com.ra4king.snake_old.networking.PacketIO;
+import com.ra4king.snake_old.networking.SocketPacketIO;
 
 
 public class Menus extends JComponent {
