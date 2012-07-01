@@ -107,7 +107,7 @@ public class SnakeBoard extends BasicScreen {
 	}
 	
 	private void die() {
-		
+		getGame().setScreen("Menus");
 	}
 	
 	@Override
