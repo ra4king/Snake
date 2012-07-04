@@ -13,7 +13,13 @@ import com.ra4king.snake.SnakeBoard.SnakeType;
 public class Snake extends Game {
 	private static final long serialVersionUID = 4863640150633571015L;
 	
-	private static final int WIDTH = 500, HEIGHT = 600;
+	public static void main(String[] args) {
+		Snake snake = new Snake();
+		snake.setupFrame("Snake", false);
+		snake.start();
+	}
+	
+	public static final int WIDTH = 500, HEIGHT = 600;
 	
 	public Snake() {
 		super(WIDTH,HEIGHT,60,2.0);
@@ -30,21 +36,21 @@ public class Snake extends Game {
 		Button b;
 		b = (Button)mainMenu.add(new Button("SLUG",5,0,2*HEIGHT/3,20,20,false,new Button.Action() {
 			public void doAction(Button button) {
-				setScreen("Snake Board", new SnakeBoard(SnakeType.SLUG));
+				setScreen("Snake Board", new Countdown(SnakeType.SLUG));
 			}
 		}));
 		b.setFont(font);
 		b.setTextPaint(Color.red);
 		b = (Button)mainMenu.add(new Button("WORM",5,b.getIntWidth()+1,2*HEIGHT/3,20,20,false,new Button.Action() {
 			public void doAction(Button button) {
-				setScreen("Snake Board", new SnakeBoard(SnakeType.WORM));
+				setScreen("Snake Board", new Countdown(SnakeType.WORM));
 			}
 		}));
 		b.setFont(font);
 		b.setTextPaint(Color.red);
 		b = (Button)mainMenu.add(new Button("PYTHON",5,b.getIntX()+b.getIntWidth()+1,2*HEIGHT/3,20,20,false,new Button.Action() {
 			public void doAction(Button button) {
-				setScreen("Snake Board", new SnakeBoard(SnakeType.PYTHON));
+				setScreen("Snake Board", new Countdown(SnakeType.PYTHON));
 			}
 		}));
 		b.setFont(font);

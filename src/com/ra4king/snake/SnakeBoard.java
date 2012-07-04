@@ -1,5 +1,6 @@
 package com.ra4king.snake;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -11,8 +12,6 @@ import com.ra4king.gameutils.BasicScreen;
 import com.ra4king.gameutils.util.SafeInteger;
 
 public class SnakeBoard extends BasicScreen {
-	private final int BLOCK_SIZE = 20;
-	
 	public enum SnakeType {
 		SLUG(120), WORM(80), PYTHON(40);
 		
@@ -62,6 +61,9 @@ public class SnakeBoard extends BasicScreen {
 			}
 		}
 	}
+	
+	private final int BOARD_WIDTH = 500, BOARD_HEIGHT = 500;
+	private final int BLOCK_SIZE = 20;
 	
 	private ArrayList<Direction> nextDirs;
 	
@@ -149,6 +151,8 @@ public class SnakeBoard extends BasicScreen {
 	
 	@Override
 	public void draw(Graphics2D g) {
+		g.setStroke(new BasicStroke(2));
+		
 		boolean head = true;
 		
 		for(Point p : body) {
@@ -164,6 +168,9 @@ public class SnakeBoard extends BasicScreen {
 		g.fillRoundRect(food.x*BLOCK_SIZE,food.y*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE,BLOCK_SIZE/2,BLOCK_SIZE/2);
 		g.setColor(Color.white);
 		g.drawRoundRect(food.x*BLOCK_SIZE,food.y*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE,BLOCK_SIZE/2,BLOCK_SIZE/2);
+		
+		g.setColor(Color.black);
+		g.drawRect(0, 0, BOARD_WIDTH-1, BOARD_HEIGHT-1);
 	}
 	
 	@Override
