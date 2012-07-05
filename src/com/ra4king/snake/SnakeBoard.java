@@ -2,6 +2,7 @@ package com.ra4king.snake;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 import com.ra4king.gameutils.BasicScreen;
+import com.ra4king.gameutils.MenuPage;
 import com.ra4king.gameutils.util.SafeInteger;
 
 public class SnakeBoard extends BasicScreen {
@@ -73,7 +75,7 @@ public class SnakeBoard extends BasicScreen {
 	private SnakeType type;
 	
 	private SafeInteger score;
-	private int possiblePoints = 90;
+	private int possiblePoints = 100;
 	
 	private long elapsedTime;
 	
@@ -109,7 +111,10 @@ public class SnakeBoard extends BasicScreen {
 	}
 	
 	private void die() {
-		getGame().setScreen("Menus");
+		MenuPage page = (MenuPage)getGame().getScreen("Highscores");
+		((Highscores)page.getWidget(0)).submit(score.get(),type);
+		
+		getGame().setScreen("Highscores");
 	}
 	
 	@Override
@@ -117,6 +122,8 @@ public class SnakeBoard extends BasicScreen {
 		elapsedTime += deltaTime;
 		
 		if(elapsedTime >= type.getDelay()*1e6) {
+			possiblePoints--;
+			
 			elapsedTime -= type.getDelay()*1e6;
 			
 			if(nextDirs.size() > 1)
@@ -133,7 +140,8 @@ public class SnakeBoard extends BasicScreen {
 			}
 			
 			if(newHead.equals(food)) {
-				score.set(score.get() + possiblePoints);
+				score.set(score.get() + (possiblePoints > 0 ? possiblePoints : 1));
+				possiblePoints = 100;
 				generateFood();
 			}
 			else
@@ -171,6 +179,13 @@ public class SnakeBoard extends BasicScreen {
 		
 		g.setColor(Color.black);
 		g.drawRect(0, 0, BOARD_WIDTH-1, BOARD_HEIGHT-1);
+		
+		g.setColor(Color.green);
+		g.setFont(new Font(Font.DIALOG_INPUT,Font.BOLD,40));
+		g.drawString(type.toString(), 20, Snake.HEIGHT-50);
+		
+		String s = score.get() + " points";
+		g.drawString(s, Snake.WIDTH - 20 - g.getFontMetrics().stringWidth(s), Snake.HEIGHT-50);
 	}
 	
 	@Override
