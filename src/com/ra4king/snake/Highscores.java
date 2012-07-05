@@ -182,10 +182,10 @@ public class Highscores extends Widget {
 		
 		if(user == null) {
 			String name;
-			while("".equals(name = JOptionPane.showInputDialog(getParent().getGame(),"Enter name:"))) {
-				if(name == null)
-					return;
-			}
+			while("".equals(name = JOptionPane.showInputDialog(getParent().getGame(),"Enter name:")));
+			
+			if(name == null)
+				return;
 			
 			user = new Entry(name,score);
 		}
