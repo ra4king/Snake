@@ -159,6 +159,9 @@ public class SnakeBoard extends BasicScreen {
 	
 	@Override
 	public void draw(Graphics2D g) {
+		g.setColor(new Color(13,13,13));
+		g.fillRect(0,0,Snake.WIDTH,Snake.HEIGHT);
+		
 		g.setStroke(new BasicStroke(2));
 		
 		boolean head = true;
@@ -177,8 +180,8 @@ public class SnakeBoard extends BasicScreen {
 		g.setColor(Color.white);
 		g.drawRoundRect(food.x*BLOCK_SIZE,food.y*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE,BLOCK_SIZE/2,BLOCK_SIZE/2);
 		
-		g.setColor(Color.black);
-		g.drawRect(0, 0, BOARD_WIDTH-1, BOARD_HEIGHT-1);
+		g.setColor(Color.white);
+		g.drawRect(0, 0, BOARD_WIDTH-1, BOARD_HEIGHT);
 		
 		g.setColor(Color.green);
 		g.setFont(new Font(Font.DIALOG_INPUT,Font.BOLD,40));
@@ -199,3 +202,4 @@ public class SnakeBoard extends BasicScreen {
 			nextDirs.add(d);
 	}
 }
+

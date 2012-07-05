@@ -10,7 +10,8 @@
             <packagesToUnSeal/>
         </sealing>
     </manifest>
-    <selectedElements exportClassFiles="false" exportJavaFiles="false" exportOutputFolder="true">
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <javaElement handleIdentifier="=GameUtils/src"/>
         <javaElement handleIdentifier="=Snake/src"/>
     </selectedElements>
 </jardesc>
