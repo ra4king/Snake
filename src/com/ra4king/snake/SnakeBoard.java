@@ -9,6 +9,8 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import javax.swing.JOptionPane;
+
 import com.ra4king.gameutils.BasicScreen;
 import com.ra4king.gameutils.MenuPage;
 import com.ra4king.gameutils.util.SafeInteger;
@@ -115,6 +117,8 @@ public class SnakeBoard extends BasicScreen {
 		((Highscores)page.getWidget(0)).submit(score.get(),type);
 		
 		getGame().setScreen("Highscores");
+		
+		JOptionPane.showMessageDialog(getGame(), "You got " + score.get() + " points.");
 	}
 	
 	@Override
