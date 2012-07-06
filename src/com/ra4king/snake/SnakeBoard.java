@@ -191,7 +191,7 @@ public class SnakeBoard extends BasicScreen {
 		g.setFont(new Font(Font.DIALOG_INPUT,Font.BOLD,40));
 		g.drawString(type.toString(), 20, Snake.HEIGHT-50);
 		
-		String s = score.get() + " points";
+		String s = score.get() + "  Points";
 		g.drawString(s, Snake.WIDTH - 20 - g.getFontMetrics().stringWidth(s), Snake.HEIGHT-50);
 	}
 	
