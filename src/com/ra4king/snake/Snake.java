@@ -37,7 +37,7 @@ public class Snake extends Game {
 		setScreen("Menus",menus);
 		
 		MenuPage mainMenu = menus.addPage("Main Menu", new MenuPage(menus));
-		mainMenu.setBackground(new Color(13, 13, 13));
+		mainMenu.setBackground(new Color(15, 15, 15));
 		
 		Font font = new Font(Font.DIALOG_INPUT,Font.BOLD,45);
 		Button b;
@@ -74,7 +74,7 @@ public class Snake extends Game {
 		
 		
 		MenuPage highscores = menus.addPage("Highscores",new MenuPage(menus));
-		highscores.setBackground(new Color(13,13,13));
+		highscores.setBackground(new Color(15,15,15));
 		
 		scores = (Highscores)highscores.add(new Highscores(SnakeType.WORM));
 		

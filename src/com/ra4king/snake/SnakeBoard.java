@@ -163,7 +163,7 @@ public class SnakeBoard extends BasicScreen {
 	
 	@Override
 	public void draw(Graphics2D g) {
-		g.setColor(new Color(13,13,13));
+		g.setColor(new Color(15,15,15));
 		g.fillRect(0,0,Snake.WIDTH,Snake.HEIGHT);
 		
 		g.setStroke(new BasicStroke(2));
