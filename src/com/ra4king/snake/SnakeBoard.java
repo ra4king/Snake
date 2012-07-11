@@ -115,6 +115,7 @@ public class SnakeBoard extends BasicScreen {
 	private void die() {
 		MenuPage page = (MenuPage)getGame().getScreen("Highscores");
 		((Highscores)page.getWidget(0)).submit(score.get(),type);
+		((Highscores)page.getWidget(0)).showScores(type);
 		
 		getGame().setScreen("Highscores");
 		
