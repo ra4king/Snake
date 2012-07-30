@@ -144,14 +144,6 @@ public class SnakeBoard extends BasicScreen {
 				return;
 			}
 			
-			if(newHead.equals(food)) {
-				score.set(score.get() + (possiblePoints > 0 ? possiblePoints : 1));
-				possiblePoints = 100;
-				generateFood();
-			}
-			else
-				body.removeLast();
-			
 			for(Point p : body)
 				if(p.equals(newHead)) {
 					die();
@@ -159,6 +151,14 @@ public class SnakeBoard extends BasicScreen {
 				}
 			
 			body.addFirst(newHead);
+			
+			if(newHead.equals(food)) {
+				score.set(score.get() + (possiblePoints > 0 ? possiblePoints : 1));
+				possiblePoints = 100;
+				generateFood();
+			}
+			else
+				body.removeLast();
 		}
 	}
 	
