@@ -186,7 +186,7 @@ public class SnakeBoard extends BasicScreen {
 		g.drawRoundRect(food.x*BLOCK_SIZE,food.y*BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE,BLOCK_SIZE/2,BLOCK_SIZE/2);
 		
 		g.setColor(Color.white);
-		g.drawRect(0, 0, BOARD_WIDTH-1, BOARD_HEIGHT);
+		g.drawRect(-1, -1, BOARD_WIDTH, BOARD_HEIGHT);
 		
 		g.setColor(Color.green);
 		g.setFont(new Font(Font.DIALOG_INPUT,Font.BOLD,40));
