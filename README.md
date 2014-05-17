@@ -1,4 +1,4 @@
 Snake
 =====
 
-[GameUtils](https://github.org/ra4king/GameUtils) is required.
+[GameUtils](https://github.com/ra4king/GameUtils) is required.
